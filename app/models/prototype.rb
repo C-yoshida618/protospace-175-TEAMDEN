@@ -1,3 +1,3 @@
-class Prototype < ApplicationRecord
-  
+class User < ApplicationRecord
+  has_many :prototypes
 end
