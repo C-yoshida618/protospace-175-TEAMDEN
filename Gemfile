@@ -82,3 +82,7 @@ group :production do
 end
 
 gem 'devise'
+
+group :development, :test do
+  gem 'pry-rails'
+end
