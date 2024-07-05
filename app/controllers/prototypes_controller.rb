@@ -15,7 +15,13 @@ class PrototypesController < ApplicationController
     else
       render :new
     end
+
+    def destroy
+      @prototype = Prototype.find(params[:id])
+      redirect_to root_path
+    end
   end
+end
 
   private
 
