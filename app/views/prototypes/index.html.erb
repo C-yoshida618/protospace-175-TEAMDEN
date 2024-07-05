@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @prototypes.each do |prototype| %>
+    <div class="content_post" style="background-image: url(<%= prototype.image %>);">
+      <p><%= prototype.text %></p>
+      <span class="name">
+        <%= prototype.name %>
+      </span>
+    </div>
+  <% end %>
+</div
