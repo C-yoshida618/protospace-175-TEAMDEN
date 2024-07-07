@@ -3,6 +3,10 @@ class PrototypesController < ApplicationController
     @prototypes = Prototype.all
   end
 
+  def show
+  
+  end  
+
   def new
     @prototype = Prototype.new
   end

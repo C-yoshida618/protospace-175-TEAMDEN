@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :prototypes, only: [:index, :new, :create]
+  resources :prototypes, only: [:index, :new, :create, :show]
 end
