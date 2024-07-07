@@ -50,8 +50,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_05_124219) do
   end
 
   create_table "prototypes", charset: "utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "catch_copy"
+    t.string "title"
+    t.text "catch_copy"
     t.text "concept"
     t.bigint "user_id"
     t.datetime "created_at", null: false
