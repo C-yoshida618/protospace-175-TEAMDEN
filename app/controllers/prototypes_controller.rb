@@ -23,8 +23,20 @@ class PrototypesController < ApplicationController
   end
 end
 
-  def show
+def show
   @prototype = Prototype.find(params[:id])
+  @comment = Comment.new
+  @comments = @prototype.comments.includes(:user)
+end
+
+def edit
+  @prototype = Prototype.find(params[:id])
+  unless user_signed_in?
+  redirect_to root_path
+  end
+end
+
+  def update
   end
 
   private
