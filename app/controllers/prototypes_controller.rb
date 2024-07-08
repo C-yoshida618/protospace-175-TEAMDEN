@@ -1,4 +1,6 @@
 class PrototypesController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     #@prototypes = Prototype
   end
@@ -23,9 +25,27 @@ class PrototypesController < ApplicationController
   end
 end
 
-  def show
+def show
   @prototype = Prototype.find(params[:id])
+  @comment = Comment.new
+  @comments = @prototype.comments.includes(:user)
+end
+
+def edit
+  @prototype = Prototype.find(params[:id])
+  unless user_signed_in?
+  redirect_to root_path
   end
+end
+
+def update
+  @prototype = Prototype.find(params[:id])
+  if @prototype.update(prototype_params)
+    redirect_to prototype_path
+  else
+    render :edit
+  end
+end
 
   private
 
