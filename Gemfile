@@ -89,4 +89,4 @@ end
 
 gem 'mini_magick'
 
-gem 'image_processing', '~> 特定のバージョン'
+gem 'image_processing', '~> 1.2'
