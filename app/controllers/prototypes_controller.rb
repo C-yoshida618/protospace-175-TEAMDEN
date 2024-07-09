@@ -47,6 +47,9 @@ def update
   end
 end
 
+def destroy
+end
+
   private
 
   def prototype_params
