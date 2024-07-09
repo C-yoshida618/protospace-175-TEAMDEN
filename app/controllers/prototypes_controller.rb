@@ -26,10 +26,10 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-  @prototype = Prototype.find(params[:id])
-  unless user_signed_in?
-  redirect_to root_path
-  end
+    @prototype = Prototype.find(params[:id])
+    unless @prototype.user_id == current_user.id
+      redirect_to action: :index
+    end
   end
 
   def update
@@ -42,9 +42,9 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-  prototype = Prototype.find(params[:id])
-  prototype.destroy
-  redirect_to root_path
+    prototype = Prototype.find(params[:id])
+    prototype.destroy
+    redirect_to root_path
   end
 
   private
