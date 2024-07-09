@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
  has_many :prototypes
   has_many :comments, dependent: :destroy
-  
+  has_many :prototypes
+
 end
 
