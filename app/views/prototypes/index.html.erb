@@ -1,11 +1,8 @@
 <main class="main">
   <div class="inner">
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.id %>
       <div class="greeting">
-        <%= "こんにちは" %>
-        <% if @prototype.present? %>
-          <%= link_to "#{current_user.name}さん", user_path(@prototype.user), class: :greeting__link %>
-        <% end %>
+        <%= "こんにちは #{current_user.name}さん" %>
       </div>
     <% else %>
       <div class="grid-6">
@@ -14,7 +11,8 @@
       </div>
     <% end %>
   </div>
+
   <div class="card__wrapper">
-    <%= render partial: "prototype", collection: @prototypes %>
+    <%= render partial: "prototypes/prototype", collection: @prototypes %>
   </div>
 </main>
