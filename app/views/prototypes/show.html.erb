@@ -12,7 +12,6 @@
           <%= link_to "削除する", prototype_path(@prototype.id), data: { turbo_method: :delete } , class: :prototype__btn %>
         </div>
       <% end %>
-
       <div class="prototype__image">
         <%= image_tag @prototype.image %>
       </div>
@@ -51,11 +50,12 @@
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @prototype.comments.each do |comment| %>
             <li class="comments_list">
-              <%= comment.content %>
-              <%= link_to comment.user.name, user_path(comment.user) %>
+               <%= comment.content %>
+              <%# <%= " コメントのテキスト "%>
+              <%= link_to comment.user.name, user_path(comment.user.id) %>
             </li>
-          <% end %>
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% end %> 
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
     </div>
