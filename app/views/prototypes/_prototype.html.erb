@@ -1,14 +1,3 @@
-
-      <%= link_to prototype.title, prototype_path(prototype) %>
-    </h3>
-    <p class="card__user">
-      <%= link_to prototype.user.name, user_path(prototype.user.id) %>
-    </p>
-    <% if user_signed_in? && current_user.id == prototype.user_id %>
-      <div class="prototype__manage">
-        <%= link_to "編集する", edit_prototype_path(prototype), class: :prototype__btn %>
-        <%= link_to "削除する", prototype_path(prototype), method: :delete, class: :prototype__btn %>
-
 <div class="card">
   <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id)%>
   <div class="card__body">
