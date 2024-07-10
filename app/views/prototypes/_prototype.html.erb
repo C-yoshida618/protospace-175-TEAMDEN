@@ -1,12 +1,21 @@
 <div class="card">
   <div class="card__image">
-    <%= image_tag prototype.image%>
+    <%= link_to prototype_path(prototype) do %>
+      <%= image_tag prototype.image %>
+    <% end %>
   </div>
   <div class="card__body">
-    <h2 class="card__title"><%= link_to prototype.title, prototype_path(prototype) %></h2>
-   <p class="card__summary">
-      <%= prototype.catch_copy %>
+    <h3 class="card__title">
+      <%= link_to prototype.title, prototype_path(prototype) %>
+    </h3>
+    <p class="card__user">
+      <%= link_to prototype.user.name, user_path(prototype.user.id) %>
     </p>
-    <p class="card__user"><%= link_to prototype.user.name, user_path(prototype.user) %></p>
+    <% if user_signed_in? && current_user.id == prototype.user_id %>
+      <div class="prototype__manage">
+        <%= link_to "編集する", edit_prototype_path(prototype), class: :prototype__btn %>
+        <%= link_to "削除する", prototype_path(prototype), method: :delete, class: :prototype__btn %>
+      </div>
+    <% end %>
   </div>
 </div>
