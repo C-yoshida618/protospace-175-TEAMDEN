@@ -3,6 +3,7 @@ class PrototypesController < ApplicationController
   
   def index
     @prototypes = Prototype.all
+    @prototype = @prototypes.first
   end
 
   def new

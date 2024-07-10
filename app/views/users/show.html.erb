@@ -16,7 +16,7 @@
           </tr>
           <tr>
             <th class="table__col1">所属</th>
-            <td class="table__col2"><%= @user.organization %></td>
+            <td class="table__col2"><%= @user.occupation %></td>
           </tr>
           <tr>
             <th class="table__col1">役職</th>
@@ -29,8 +29,6 @@
       </h2>
       <div class="user__card">
         <%= render partial: 'prototypes/prototype', collection: @prototypes %>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>
