@@ -1,6 +1,6 @@
 <main class="main">
   <div class="inner">
-    <% if user_signed_in? && current_user.id == prototype.user_id %>
+    <% if user_signed_in? && current_user.id %>
       <div class="greeting">
         <%= "こんにちは #{current_user.name}さん" %>
       </div>
